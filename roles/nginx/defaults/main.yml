@@ -1,0 +1,8 @@
+---
+# defaults file for nginxRole
+enable_nginx_lb: false
+load_balancer_is_required: false
+
+#IP mapping for webservers
+web1: 10.0.2.80
+web2: 10.0.2.221

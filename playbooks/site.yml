@@ -2,12 +2,10 @@
 - hosts: all
 
 - name: Include dynamic variables
-  import_playbook: ../dynamic-assignments/env-vars.yml
+  import_playbook: ../static-assignments/common.yml 
+  include: ../dynamic-assignments/env-vars.yml
   tags:
     - always
-
-- name: Delete wireshark installation
-  import_playbook: ../static-assignments/common-del.yml
 
 - name: webserver
   import_playbook: ../static-assignments/webservers.yml
