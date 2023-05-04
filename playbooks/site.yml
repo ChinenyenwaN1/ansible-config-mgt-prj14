@@ -5,4 +5,4 @@
 
 - hosts: nginx
 - name: nginx assignment
-- import_playbook: ../static-assignments/nginx.yml
+  import_playbook: ../static-assignments/nginx.yml
