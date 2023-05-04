@@ -120,16 +120,16 @@ mysql_databases:
 
 # Users.
 mysql_users: 
-   - name: webaccess
+  - name: webaccess
      host: 0.0.0.0
      password: secret
      priv: '*.*:ALL,GRANT'
 
-# mysql_users:
-# - name: homestead
-#   host: 172.31.92.104
-#   password: sePret^i
-#   priv: '*.*:ALL,GRANT'     
+mysql_users:
+ - name: homestead
+   host: 172.31.18.250
+   password: sePret^i
+   priv: '*.*:ALL,GRANT'     
 
 mysql_disable_log_bin: false
 
