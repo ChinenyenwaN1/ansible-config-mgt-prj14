@@ -5,7 +5,11 @@ pipeline {
       ANSIBLE_CONFIG="${WORKSPACE}/deploy/ansible.cfg"
     }
 
-  stages {
+  parameters {
+      string(name: 'inventory', defaultValue: 'dev',  description: 'This is the inventory file for the environment to deploy configuration')
+    }
+
+  stages{
       stage("Initial cleanup") {
           steps {
             dir("${WORKSPACE}") {
@@ -33,7 +37,7 @@ pipeline {
          }
       }
 
-      stage('Clean Workspace after build') {
+      stage('Clean Workspace after build'){
         steps{
           cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenUnstable: true, deleteDirs: true)
         }
@@ -41,3 +45,4 @@ pipeline {
    }
 
 }
+
