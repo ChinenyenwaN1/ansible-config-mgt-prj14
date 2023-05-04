@@ -1,26 +1,23 @@
 ---
-- name: Install Nginx and PHP on webserver
-  hosts: webserver
-  become: true
-  
-  tasks:
-    - name: Install Nginx
-      yum:
-        name: nginx
-        state: present
+# tasks file for nginx
+- name: install nginx on the webserver
+  ansible.builtin.yum:
+      name: nginx
+      state: present
 
-    - name: Start and enable Nginx
-      service:
-        name: nginx
-        state: started
-        enabled: true
 
-    - name: Install PHP and its dependencies
-      yum:
-        name: "{{ item }}"
-        state: present
-      loop:
-        - php
-        - php-mysqlnd
-        - php-gd
-        - php-curl
+- name: ensure nginx is started and enabled
+  ansible.builtin.service:
+     name: nginx
+     state: started 
+     enabled: yes
+
+- name: install PHP
+  ansible.builtin.yum:
+    name:
+      - php 
+      - php-mysqlnd
+      - php-gd 
+      - php-curl
+    state: present
+    
