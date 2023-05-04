@@ -106,11 +106,11 @@ mysql_config_include_files: []
 #  - { src: path/relative/to/playbook/anotherfile.cnf, force: yes }
 
 # Databases.
-mysql_databases:
-  - name: tooling
-    collation: utf8_general_ci
-    encoding: utf8
-    replicate: 1
+# mysql_databases:
+#  - name: tooling
+#    collation: utf8_general_ci
+#    encoding: utf8
+#    replicate: 1
 
 mysql_databases:
   - name: homestead
@@ -125,11 +125,11 @@ mysql_users:
      password: secret
      priv: '*.*:ALL,GRANT'
 
-mysql_users:
- - name: homestead
-   host: 172.31.92.104
-   password: sePret^i
-   priv: '*.*:ALL,GRANT'     
+# mysql_users:
+# - name: homestead
+#   host: 172.31.92.104
+#   password: sePret^i
+#   priv: '*.*:ALL,GRANT'     
 
 mysql_disable_log_bin: false
 
