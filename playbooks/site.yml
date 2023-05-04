@@ -1,9 +1,17 @@
 ---
-- hosts: db
 - name: database assignment
-  ansible.builtin.import_playbook: ../static-assignments/database.yml
+  hosts: db
+  become: true
 
+  tasks:
+    - name: Import database playbook
+      import_playbook: ../static-assignments/database.yml
+      
 
-- hosts: nginx
-- name: nginx assignment
-  ansible.builtin.import_playbook: ../static-assignments/nginx.yml
+  - name: nginx assignment
+    hosts: nginx
+    become: true
+
+  tasks:
+    - name: Import nginx playbook
+      import_playbook: ../static-assignments/nginx.yml
