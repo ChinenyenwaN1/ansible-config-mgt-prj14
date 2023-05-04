@@ -7,7 +7,6 @@
     - name: Import database playbook
       import_playbook: ../static-assignments/database.yml
 
-
 -   name: nginx assignment
     hosts: nginx
     become: true
