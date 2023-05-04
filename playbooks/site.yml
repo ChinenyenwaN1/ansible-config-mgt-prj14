@@ -11,9 +11,9 @@
 # - name: artifactory assignment
 #   import_playbook: ../static-assignments/artifactory.yml
 
-- hosts: sonar
-- name: sonar assignment
-  import_playbook: ../static-assignments/sonar.yml
+#   hosts: sonar
+# - name: sonar assignment
+#   import_playbook: ../static-assignments/sonar.yml
 
 # - hosts: todo
 # - name: Deploy the todo application
