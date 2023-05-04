@@ -2,26 +2,25 @@
 - name: Install Nginx and PHP on webserver
   hosts: webserver
   become: true
-
+  
   tasks:
-    - name: Install nginx
+    - name: Install Nginx
       yum:
         name: nginx
         state: present
 
-    - name: Start and enable nginx
-      systemd:
+    - name: Start and enable Nginx
+      service:
         name: nginx
         state: started
-        enabled: yes
+        enabled: true
 
     - name: Install PHP and its dependencies
       yum:
-        name:
-          - php 
-          - php-mysqlnd
-          - php-gd 
-          - php-curl
+        name: "{{ item }}"
         state: present
-
-    
+      loop:
+        - php
+        - php-mysqlnd
+        - php-gd
+        - php-curl
