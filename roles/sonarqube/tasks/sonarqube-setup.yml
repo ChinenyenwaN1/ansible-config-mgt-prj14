@@ -35,10 +35,10 @@
     state: absent
 
 - name: add user to run sonar
-  ansible.builtin.shell: useradd -c "user to run SonarQube" -d /opt/sonarqube -g sonar sonar 
+  shell: useradd -c "user to run SonarQube" -d /opt/sonarqube -g sonar sonar 
 
 - name: change ownership
-  ansible.builtin.shell: chown sonar:sonar /opt/sonarqube -R
+  shell: chown sonar:sonar /opt/sonarqube -R
     
 - name: Configuring the SonarQube Server
   ansible.builtin.template:
