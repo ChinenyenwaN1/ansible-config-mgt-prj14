@@ -13,7 +13,7 @@
 
   - hosts: sonar
   - name: sonar assignment
-  - import_playbook: ../static-assignments/sonar.yml
+    import_playbook: ../static-assignments/sonar.yml
 
 # - hosts: todo
 # - name: Deploy the todo application
